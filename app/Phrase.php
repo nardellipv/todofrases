@@ -14,4 +14,11 @@ class Phrase extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function Votes()
+    {
+        return $this->hasMany(Vote::class);
+    }
+
+
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePhrasesTable extends Migration
+class CreateVotesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,23 +13,19 @@ class CreatePhrasesTable extends Migration
      */
     public function up()
     {
-        Schema::create('phrases', function (Blueprint $table) {
+        Schema::create('votes', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->mediumText('text');
-            $table->string('image')->nullable();
-            $table->string('author');
-
-            $table->integer('category_id')->unsigned();
-            $table->integer('user_id')->unsigned();
+            $table->integer('vote');
+            $table->integer('phrase_id')->unsigned();
 
             $table->timestamps();
 
-
             //relaciones
 
-            $table->foreign('user_id')->references('id')->on('users');
-
+            $table->foreign('phrase_id')->references('id')->on('phrases')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
@@ -40,6 +36,6 @@ class CreatePhrasesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('phrases');
+        Schema::dropIfExists('votes');
     }
 }

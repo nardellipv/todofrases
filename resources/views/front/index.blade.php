@@ -5,6 +5,7 @@
         <div class="col-md-8 banner-left">
             <h3>Última Frase</h3>
             <p>{{ $lastPhrase->text }}</p>
+            <p><b>{{ $lastPhrase->author }}</b></p>
         </div>
         <div class="clearfix"></div>
     </div>
@@ -23,6 +24,7 @@
                                 <div class="mask">
                                     <h4>Frase Aleatorea</h4>
                                     <p>{{ $randPhrase1->text }}</p>
+                                    <p><b>{{ $randPhrase1->author }}</b></p>
                                     <h5>Continuar leyendo...</h5>
                                 </div>
                             </div>
@@ -40,7 +42,8 @@
                                 <div class="mask">
                                     <h4>Más Frases</h4>
                                     <p>{{ $randPhrase2->text }}</p>
-                                    <h5>Continue reading...</h5>
+                                    <p><b>{{ $randPhrase2->author }}</b></p>
+                                    <h5>Continuar leyendo...</h5>
                                 </div>
                             </div>
                         </div>
@@ -53,7 +56,10 @@
         <div class="welcome-bottom">
             <ul>
                 @foreach($lastPhrasesLists1 as $lastPhraselist1)
-                    <li><h5>{!! $lastPhraselist1->text !!}</h5></li>
+                    <li>
+                        <h5>{!! $lastPhraselist1->text !!}</h5>
+                        <b>{{ $lastPhraselist1->author }}</b>
+                    </li>
                     <br />
                 @endforeach
             </ul>
