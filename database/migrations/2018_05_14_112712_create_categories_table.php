@@ -19,15 +19,8 @@ class CreateCategoriesTable extends Migration
             $table->string('category');
             $table->string('image')->nullable();
 
-            $table->integer('phrase_id')->unsigned();
-
             $table->timestamps();
 
-            //relaciones
-
-            $table->foreign('phrase_id')->references('id')->on('phrases')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
 
         });
     }

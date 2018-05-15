@@ -30,6 +30,7 @@ class CreatePhrasesTable extends Migration
 
             $table->foreign('user_id')->references('id')->on('users');
 
+
         });
     }
 
