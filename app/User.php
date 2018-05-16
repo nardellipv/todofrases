@@ -9,11 +9,12 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+
+    public function Phrases()
+    {
+        return $this->hasMany(Phrase::class);
+    }
+
     protected $fillable = [
         'name', 'email', 'password',
     ];
