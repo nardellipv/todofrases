@@ -13,6 +13,7 @@
             window.scrollTo(0, 1);
         } </script>
     <!-- bootstrap-css -->
+    <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
     <link rel="stylesheet" href="{{ asset('backStyle/css/bootstrap.min.css') }}">
     <!-- //bootstrap-css -->
     <!-- Custom CSS -->
