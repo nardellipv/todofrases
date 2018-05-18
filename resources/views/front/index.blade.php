@@ -1,6 +1,11 @@
 @extends('layouts.main_front')
 
 @section('content')
+    <h1>Frases para reflexionar</h1>
+    <h5>Lee, reflexiona, compartí y vota frases de la vida real, oraciones cortas, sabias y bonitas para compartir y
+        quedarse pensando pensar.<br /><br />
+    Esperamos que estas palabras y mensajes lleguen a tu corazón y te sirvan para cualquier momento de la vida. Queremos que
+    participes votando las frases que más te gusten y por supuesto compartas con tus seres queridos.</h5>
     <div class="banner">
         <div class="col-md-8 banner-left">
             <h3>Última Frase</h3>
