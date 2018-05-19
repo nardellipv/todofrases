@@ -54,5 +54,39 @@
         </div>--}}
         <div class="clearfix"></div>
     </div>
+
+    <div class="table-agile-info">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Frases Ranking
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped b-t b-light">
+                    <thead>
+                    <tr>
+                        <th>Frase</th>
+                        <th>Votos</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($rankings as $ranking)
+                        <tr>
+                            <td>{{ $ranking->phrase->text }}</td>
+                            <td>{{ $ranking->vote }}</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+            <footer class="panel-footer">
+                <div class="row">
+                    <div class="col-sm-7 text-right text-center-xs">
+                        {!! $rankings->render() !!}
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
     <script data-cfasync='false' type='text/javascript' src='//p285918.clksite.com/adServe/banners?tid=285918_554159_0'></script>
 @endsection

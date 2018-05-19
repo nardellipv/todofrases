@@ -21,8 +21,8 @@ class PhraseController extends Controller
 
     public function listPhrase()
     {
-        $phrases = Phrase::orderBy('id','DESC')
-        ->paginate(10);
+        $phrases = Phrase::orderBy('id', 'DESC')
+            ->paginate(10);
 
         $categories = Category::all();
 

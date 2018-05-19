@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Phrase;
 use App\User;
+use App\Vote;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -13,7 +14,9 @@ class DashboardController extends Controller
     {
         $phrase = Phrase::count();
         $user = User::count();
+        $rankings = Vote::orderBy('vote', 'DESC')
+            ->paginate(10);
 
-        return view('admin.dashboard', compact('phrase', 'user'));
+        return view('admin.dashboard', compact('phrase', 'user','rankings'));
     }
 }
