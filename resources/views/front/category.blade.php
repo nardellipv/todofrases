@@ -14,7 +14,6 @@
                             <li>
                                 <a href="#">{!! $phrase->text !!} <b>{{ $phrase->author }}</b></a>
                                 <a href="{{ url('like', $phrase->id) }}"><img src="{{ asset('frontStyle/images/likes.png') }}"></a>
-                            </li>
                         @endforeach
                     </ul>
                 </div>

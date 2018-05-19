@@ -21,7 +21,8 @@ class PhraseController extends Controller
 
     public function listPhrase()
     {
-        $phrases = Phrase::paginate(10);
+        $phrases = Phrase::orderBy('id','DESC')
+        ->paginate(10);
 
         $categories = Category::all();
 
@@ -53,6 +54,15 @@ class PhraseController extends Controller
         $phrase->fill($request->all())->save();
 
         Session::flash('message', 'Frase editada correctamente');
+        return back();
+    }
+
+    public function destroy($id)
+    {
+        $phrase = Phrase::find($id);
+        $phrase->delete();
+
+        Session::flash('message', 'Frase ' . $phrase->text . ' eliminada correctamente');
         return back();
     }
 }

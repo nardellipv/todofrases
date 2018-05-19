@@ -17,7 +17,7 @@
                         <label class="col-sm-3 control-label">Editar Categoría</label>
                         <div class="col-sm-6">
                             <select name="category_id" class="form-control m-bot15">
-                                <option>{{ $phrase->category->category }}</option>
+                                <option value="{{ $phrase->category->id }}">{{ $phrase->category->category }}</option>
                                 @foreach($categories as $category)
                                     <option value="{{ $category->id }}">{{ $category->category }}</option>
                                 @endforeach

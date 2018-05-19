@@ -30,7 +30,7 @@
                             <td>
                                 <a href="{{ url('phrase', $phrase->id) }}" type="submit" class="btn btn-link"><i
                                             class="fa fa-check text-success text-active"></i></a>
-                                {!! Form::open(['method' => 'DELETE','route' => ['category.destroy', $phrase->id],'style'=>'display:inline']) !!}
+                                {!! Form::open(['method' => 'DELETE','route' => ['phrase.destroy', $phrase->id],'style'=>'display:inline']) !!}
                                 {{Form::token() }}
                                 <button type="submit" class="btn btn-link" >
                                     <i class="fa fa-times text-danger text"></i></button>

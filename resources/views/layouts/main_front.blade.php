@@ -18,11 +18,15 @@
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ asset('frontStyle/css/flexslider.css') }}" type="text/css" media="screen"/>
+
     <script src="{{ asset('frontStyle/js/jquery.min.js') }}"></script>
+
 
     @include('front.external.analytics')
 
     @include('front.external.oneSignal')
+
+    @yield('script')
 
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>

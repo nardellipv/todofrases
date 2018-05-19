@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use App\Category;
 use App\Phrase;
 use App\Vote;
+use Share;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cookie;
@@ -26,18 +27,12 @@ class HomeController extends Controller
         //listado de frases izquierda
         $lastPhrasesLists1 = Phrase::inRandomOrder()->take(4)->get();
 
-        return view('front.index', compact('categories', 'lastPhrase', 'randPhrase1', 'randPhrase2', 'lastPhrasesLists1'));
-    }
+        //ranking frases
+        $rankings = Vote::orderBY('Vote', 'DESC')
+            ->take(5)
+        ->get();
 
-    public function category($id)
-    {
-        $categories = Category::all();
-        $category = Category::find($id);
-
-        $phrases = Phrase::where('category_id', $id)
-            ->get();
-
-        return view('front.category', compact('category', 'categories', 'phrases'));
+        return view('front.index', compact('categories', 'lastPhrase', 'randPhrase1', 'randPhrase2', 'lastPhrasesLists1', 'rankings'));
     }
 
     public function like($id)

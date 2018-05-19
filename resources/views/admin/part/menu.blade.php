@@ -16,7 +16,7 @@
                 </a>
                 <ul class="sub">
                     <li><a href="{{ url('category') }}">Agregar</a></li>
-                    <li><a href="{{ url('list') }}">Listar</a></li>
+                    <li><a href="{{ url('listcategory') }}">Listar</a></li>
                 </ul>
             </li>
             <li class="sub-menu">
@@ -26,7 +26,7 @@
                 </a>
                 <ul class="sub">
                     <li><a href="{{ url('phrase') }}">Agregar</a></li>
-                    <li><a href="{{ url('list') }}">Listar</a></li>
+                    <li><a href="{{ url('listphrases') }}">Listar</a></li>
                 </ul>
             </li>
         </ul>

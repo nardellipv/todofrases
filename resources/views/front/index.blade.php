@@ -69,6 +69,19 @@
                 @endforeach
             </ul>
         </div>
+        <div class="welcome-bottom">
+            <h2>Las frases que más votaron los usuarios</h2>
+            <ul>
+                @foreach($rankings as $ranking)
+                    <li>
+                        <h5>{!! $ranking->phrase->text !!}</h5>
+                        <b>{{ $ranking->phrase->author }}</b>
+                        <h6>{{ $ranking->vote }} votos</h6>
+                    </li>
+                    <br />
+                @endforeach
+            </ul>
+        </div>
 
         <!-- welcome-bottom -->
     </div>
