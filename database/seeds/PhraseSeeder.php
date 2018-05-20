@@ -12,6 +12,6 @@ class PhraseSeeder extends Seeder
      */
     public function run()
     {
-        factory(Phrase::class, 100)->create();
+        factory(Phrase::class, 500)->create();
     }
 }

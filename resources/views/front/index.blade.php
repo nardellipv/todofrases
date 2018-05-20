@@ -58,17 +58,7 @@
             <div class="clearfix"></div>
         </div>
         <!-- welcome-bottom -->
-        <div class="welcome-bottom">
-            <ul>
-                @foreach($lastPhrasesLists1 as $lastPhraselist1)
-                    <li>
-                        <h5>{!! $lastPhraselist1->text !!}</h5>
-                        <b>{{ $lastPhraselist1->author }}</b>
-                    </li>
-                    <br />
-                @endforeach
-            </ul>
-        </div>
+
         <div class="welcome-bottom">
             <h2>Las frases que más votaron los usuarios</h2>
             <ul>
@@ -77,6 +67,19 @@
                         <h5>{!! $ranking->phrase->text !!}</h5>
                         <b>{{ $ranking->phrase->author }}</b>
                         <h6>{{ $ranking->vote }} votos</h6>
+                    </li>
+                    <br />
+                @endforeach
+            </ul>
+        </div>
+
+        <h2>Y aun muchas más frases</h2>
+        <div class="welcome-bottom">
+            <ul>
+                @foreach($lastPhrasesLists1 as $lastPhraselist1)
+                    <li>
+                        <h5>{!! $lastPhraselist1->text !!}</h5>
+                        <b>{{ $lastPhraselist1->author }}</b>
                     </li>
                     <br />
                 @endforeach
