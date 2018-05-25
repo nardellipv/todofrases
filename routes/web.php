@@ -8,7 +8,7 @@ Route::get('/', function () {
 });
 
 Route::get('/', 'Web\HomeController@index')->name('home');
-Route::get('categoria/{id}', 'Web\CategoryController@category')->name('categoria');
+Route::get('categoria/{category}', 'Web\CategoryController@category')->name('categoria');
 Route::get('like/{id}', 'Web\HomeController@like')->name('like');
 
 //back

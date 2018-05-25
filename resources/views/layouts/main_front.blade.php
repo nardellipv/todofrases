@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
 <html lang="{{ app()->getLocale() }}">
 <head>
-    <title>Todo Frases | Las mejores frases</title>
+    <title>&#x1F497; Frases cortas y bonitas de vida - reflexión - del amor</title>
     <link href="{{ asset('frontStyle/css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all">
     <link href="{{ asset('frontStyle/css/style.css') }}" rel="stylesheet" type="text/css" media="all"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content="Frases de amor, tiempo, piropos, chistes, Arte, cualidades, frases para facebook, frases para whatsapp"/>
-    <meta name="description" content="Sitio para leer frases, reflexionar y compartir con seres queridos. Agregamos todas las semanas. Vota las
-frases que mas te gusten y mira el ranking de las mas votadas.">
+    <meta name="description" content="Muchas frases cortas de personajes celebres y anónimos sobre el amor, la amistad, la vida. Frases motivadoras y
+    de reflexión para compartir con seres queridos y votar estas reflexiones que te llegan al alma.">
     <meta name="author" content="MikAnt">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="application/x-javascript"> addEventListener("load", function () {
@@ -21,7 +21,6 @@ frases que mas te gusten y mira el ranking de las mas votadas.">
     <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{{ asset('frontStyle/css/flexslider.css') }}" type="text/css" media="screen"/>
 
     <script src="{{ asset('frontStyle/js/jquery.min.js') }}"></script>
 
@@ -37,6 +36,22 @@ frases que mas te gusten y mira el ranking de las mas votadas.">
         });
     </script>
 
+    <script>
+        $(document).ready(function() {
+            $('a[href^="#"]').click(function() {
+                var destino = $(this.hash);
+                if (destino.length == 0) {
+                    destino = $('a[name="' + this.hash.substr(1) + '"]');
+                }
+                if (destino.length == 0) {
+                    destino = $('html');
+                }
+                $('html, body').animate({ scrollTop: destino.offset().top }, 1000);
+                return false;
+            });
+        });
+    </script>
+
     <!-- Hotjar Tracking Code for https://www.todofrases.live -->
     <script>
         (function(h,o,t,j,a,r){
@@ -48,9 +63,6 @@ frases que mas te gusten y mira el ranking de las mas votadas.">
             a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
-
-    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    {{--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b0061927fcccd0c"></script>--}}
 
 </head>
 <body>

@@ -9,9 +9,11 @@
         <ul>
             <li><a href="{{ url('/') }}">Página Principal</a></li>
             @foreach($categories as $category)
-                <li><a href="{{ url('categoria', $category->id) }}">{{ $category->category }}</a></li>
+                <li><a href="{{ url('categoria', $category->category) }}">{{ $category->category }}</a></li>
             @endforeach
-
+            @if(Request::path() === '/')
+                <li><a href="#ranking">Ranking de frases</a></li>
+            @endif
             <div class="clearfix"></div>
         </ul>
         <!-- script-for-nav -->

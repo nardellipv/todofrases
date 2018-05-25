@@ -4,16 +4,18 @@
     @if (Session::has('message'))
         <p class="alert alert-danger">{!! Session::get('message') !!}</p>
     @endif
+
     <div class="about-content">
         <div class="about-section">
             <div class="about-grid">
                 <div class="about-grid2">
-                    <h3>{{ $category->category }}</h3>
+                    <h3>{{ $categoryFind->category }}</h3>
                     <ul>
                         @foreach($phrases as $phrase)
                             <li>
                                 <a href="#">{!! $phrase->text !!} <b>{{ $phrase->author }}</b></a>
                                 <a href="{{ url('like', $phrase->id) }}"><img src="{{ asset('frontStyle/images/likes.png') }}"></a>
+                            </li>
                         @endforeach
                     </ul>
                 </div>
