@@ -8,12 +8,37 @@
                     <i class="fa fa-eye"> </i>
                 </div>
                 <div class="col-md-8 market-update-left">
-                    <h4>Frases</h4>
+                    <h4>Frases Aprobadas</h4>
                     <h3>{{ $phrase }}</h3>
                 </div>
                 <div class="clearfix"></div>
             </div>
         </div>
+        <div class="col-md-3 market-update-gd">
+            <div class="market-update-block clr-block-6">
+                <div class="col-md-4 market-update-right">
+                    <i class="fa fa-usd"></i>
+                </div>
+                <div class="col-md-8 market-update-left">
+                    <h4>Frases Pendientes</h4>
+                    <h3>{{ $phrasePending }}</h3>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="col-md-3 market-update-gd">
+            <div class="market-update-block clr-block-5">
+                <div class="col-md-4 market-update-right">
+                    <i class="fa fa-usd" aria-hidden="true"></i>
+                </div>
+                <div class="col-md-8 market-update-left">
+                    <h4>Frases Rechazadas</h4>
+                    <h3>{{ $phraseReject }}</h3>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        @if(Auth::user()->type == 'ADMIN')
         <div class="col-md-3 market-update-gd">
             <div class="market-update-block clr-block-1">
                 <div class="col-md-4 market-update-right">
@@ -26,32 +51,7 @@
                 <div class="clearfix"></div>
             </div>
         </div>
-        {{--<div class="col-md-3 market-update-gd">
-            <div class="market-update-block clr-block-3">
-                <div class="col-md-4 market-update-right">
-                    <i class="fa fa-usd"></i>
-                </div>
-                <div class="col-md-8 market-update-left">
-                    <h4>Sales</h4>
-                    <h3>1,500</h3>
-                    <p>Other hand, we denounce</p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-        <div class="col-md-3 market-update-gd">
-            <div class="market-update-block clr-block-4">
-                <div class="col-md-4 market-update-right">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                </div>
-                <div class="col-md-8 market-update-left">
-                    <h4>Orders</h4>
-                    <h3>1,500</h3>
-                    <p>Other hand, we denounce</p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>--}}
+        @endif
         <div class="clearfix"></div>
     </div>
 

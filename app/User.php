@@ -15,8 +15,13 @@ class User extends Authenticatable
         return $this->hasMany(Phrase::class);
     }
 
+    public function Photos()
+    {
+        return $this->hasMany(Photo::class);
+    }
+
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'user', 'password',
     ];
 
     /**

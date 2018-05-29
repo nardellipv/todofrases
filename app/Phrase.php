@@ -10,7 +10,7 @@ class Phrase extends Model
         'text', 'image', 'author', 'category_id', 'user_id'
     ];
 
-    public function Users()
+    public function User()
     {
         return $this->belongsTo(User::class);
     }

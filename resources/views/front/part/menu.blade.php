@@ -1,30 +1,38 @@
-<div class="col-md-3 top-left">
-    <div class="logo">
-        <a href="index.html"><img src="{{ asset('frontStyle/images/logo.png') }}" class="img-responsive" alt=""/></a>
+<div>
+    <div class="col-md-12 cabecera" id="cabecera">
+        <nav class="navbar navbar-light navbar-expand-md fixed-top bg-light navigation-clean-button">
+            <div class="container"><a class="navbar-brand" href="#"><img
+                            src="{{ asset('frontStyle/img/logo.png') }}"></a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                            class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item" role="presentation"><a href="{{ url('/') }}" class="nav-link">Página
+                                Principal</a>
+                        </li>
+                        @if(Request::path() === '/')
+                            <li class="nav-item" role="presentation"><a href="#ranking" class="nav-link">Ranking de
+                                    frases</a>
+                            </li>
+                            <li class="nav-item" role="presentation"><a href="#gallery" class="nav-link">Galería de imágenes</a>
+                            </li>
+                        @endif
+                        <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown"
+                                                aria-expanded="false" href="#">Categorías </a>
+                            <div class="dropdown-menu" role="menu">
+                                @foreach($categories as $category)
+                                    <a href="{{ url('categoria', $category->category) }}" class="dropdown-item"
+                                       role="presentation">{{ $category->category }}
+                                    </a>
+                                @endforeach
+                            </div>
+                        </li>
+                    </ul>
+                    <span class="navbar-text actions"> <a href="{{ url('login') }}" class="login">Ingresar</a>
+                        <a href="{{ url('register') }}" class="btn btn-light action-button" role="button">Registrarse</a></span>
+                </div>
+            </div>
+        </nav>
+
     </div>
-    <h4 class="menn">Categorías</h4>
-    <label></label>
-    <div class="head-nav">
-        <span class="menu"> </span>
-        <ul>
-            <li><a href="{{ url('/') }}">Página Principal</a></li>
-            @foreach($categories as $category)
-                <li><a href="{{ url('categoria', $category->category) }}">{{ $category->category }}</a></li>
-            @endforeach
-            @if(Request::path() === '/')
-                <li><a href="#ranking">Ranking de frases</a></li>
-            @endif
-            <div class="clearfix"></div>
-        </ul>
-        <!-- script-for-nav -->
-        <script>
-            $("span.menu").click(function () {
-                $(".head-nav ul").slideToggle(300, function () {
-                    // Animation complete.
-                });
-            });
-        </script>
-        <!-- script-for-nav -->
-    </div>
-    <div class="clearfix"></div>
 </div>

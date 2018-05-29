@@ -11,7 +11,9 @@
 
         function hideURLbar() {
             window.scrollTo(0, 1);
-        } </script>
+        }
+    </script>
+    @yield('style')
     <!-- bootstrap-css -->
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
     <link rel="stylesheet" href="{{ asset('backStyle/css/bootstrap.min.css') }}">
@@ -33,6 +35,9 @@
     <script src="{{ asset('backStyle/js/jquery2.0.3.min.js') }}"></script>
     <script src="{{ asset('backStyle/js/raphael-min.js') }}"></script>
     <script src="{{ asset('backStyle/js/morris.js') }}"></script>
+
+    @include('front.external.analytics')
+
 </head>
 <body>
 <section id="container">
@@ -67,8 +72,9 @@
 <script src="{{ asset('backStyle/js/jquery.nicescroll.js') }}"></script>
 <!--[if lte IE 8]>
 <script language="javascript" type="text/javascript"
-        src="{{ asset('backStyle/s/flot-chart/excanvas.min.js') }}"></script><![endif]-->
+        src="{{ asset('backStyle/s/flot-chart/excanvas.min.js') }}"></script><!--[endif]-->
 <script src="{{ asset('backStyle/js/jquery.scrollTo.js') }}"></script>
+@yield('script')
 <!-- morris JavaScript -->
 <script>
     $(document).ready(function () {

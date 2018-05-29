@@ -23,15 +23,24 @@
                         <tr>
                             <td>{{ $category->category }}</td>
                             <td>{{ $category->created_at }}</td>
-                            <td>
-                                <a href="{{ url('category', $category->id) }}" type="submit" class="btn btn-link"><i
-                                            class="fa fa-check text-success text-active"></i></a>
-                                {!! Form::open(['method' => 'DELETE','route' => ['category.destroy', $category->id],'style'=>'display:inline']) !!}
-                                {{Form::token() }}
-                                <button type="submit" class="btn btn-link" >
-                                    <i class="fa fa-times text-danger text"></i></button>
-                                {!! Form::Close() !!}
-                            </td>
+                            @if(Auth::user()->type == 'ADMIN')
+                                <td>
+                                    <a href="{{ url('category', $category->id) }}" type="submit" class="btn btn-link"><i
+                                                class="fa fa-check text-success text-active"></i></a>
+                                    {!! Form::open(['method' => 'DELETE','route' => ['category.destroy', $category->id],'style'=>'display:inline']) !!}
+                                    {{Form::token() }}
+                                    <button type="submit" class="btn btn-link">
+                                        <i class="fa fa-times text-danger text"></i></button>
+                                    {!! Form::Close() !!}
+                                </td>
+                            @else
+                                <td>
+                                    <button type="submit" class="btn btn-link disabled"><i
+                                                class="fa fa-check text-success text-active"></i></button>
+                                    <button type="submit" class="btn btn-link disabled">
+                                        <i class="fa fa-times text-danger text"></i></button>
+                                </td>
+                            @endif
                         </tr>
                     @endforeach
                     </tbody>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Category;
+use App\Photo;
 use App\Phrase;
 use App\Vote;
 use Share;
@@ -18,21 +19,35 @@ class HomeController extends Controller
     {
         $categories = Category::all();
         //ultima frase
-        $lastPhrase = Phrase::orderBy('id', 'DESC')->first();
+        $lastPhrase = Phrase::where('status', 'APPROVED')
+            ->orderBy('id', 'DESC')
+            ->first();
 
         //penultima frase
-        $randPhrase1 = Phrase::inRandomOrder()->first();
-        $randPhrase2 = Phrase::inRandomOrder()->first();
+        $randPhrase1 = Phrase::where('status', 'APPROVED')
+            ->inRandomOrder()
+            ->first();
+        $randPhrase2 = Phrase::where('status', 'APPROVED')
+            ->inRandomOrder()
+            ->first();
 
         //listado de frases izquierda
-        $lastPhrasesLists1 = Phrase::inRandomOrder()->take(4)->get();
+        $lastPhrasesLists1 = Phrase::where('status','APPROVED')
+        ->inRandomOrder()
+            ->take(4)
+            ->get();
 
         //ranking frases
         $rankings = Vote::orderBY('Vote', 'DESC')
             ->take(5)
-        ->get();
+            ->get();
 
-        return view('front.index', compact('categories', 'lastPhrase', 'randPhrase1', 'randPhrase2', 'lastPhrasesLists1', 'rankings'));
+        $photos = Photo::where('status', 'APPROVED')
+            ->orderBy('id','DESC')
+            ->get();
+
+        return view('front.index', compact('categories', 'lastPhrase', 'randPhrase1', 'randPhrase2',
+            'lastPhrasesLists1', 'rankings', 'photos'));
     }
 
     public function like($id)
@@ -41,7 +56,7 @@ class HomeController extends Controller
         Cookie::queue('Phrase', $id, 60);
         $vote = Vote::find($id);
 
-        if(Cookie::get('Phrase') != $id) {
+        if (Cookie::get('Phrase') != $id) {
             if ($vote == NULL) {
                 $vote = new Vote;
                 $vote->vote = 1;
@@ -52,7 +67,7 @@ class HomeController extends Controller
                 $vote->phrase_id = $id;
                 $vote->save();
             }
-        }else{
+        } else {
             Session::flash('message', 'Ya has votado esta frase');
             return back();
         }

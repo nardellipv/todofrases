@@ -19,6 +19,7 @@ class CreatePhrasesTable extends Migration
             $table->mediumText('text');
             $table->string('image')->nullable();
             $table->string('author');
+            $table->enum('status', ['APPROVED','PENDING','REJECTED'])->dafault('PENDING');
 
             $table->integer('category_id')->unsigned();
             $table->integer('user_id')->unsigned();

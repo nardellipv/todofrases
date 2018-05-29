@@ -203,10 +203,11 @@ ul.sidebar-menu li a.active i {
 }
 .footer {
     background: #d19a98;
-    padding: 20px;
+    padding: 10px;
     position: fixed;
     bottom: 0;
     width: 100%;
+    font-size: 70%;
 }
 .footer p {
     color: #fff;
@@ -717,6 +718,22 @@ ul.top-menu>li>a:hover,ul.top-menu>li>a:focus {
   -webkit-transition: 0.5s all;
   -moz-transition: 0.5s all;
   -o-transition: 0.5s all;
+}
+.market-update-block.clr-block-5 {
+    background:#FF0040;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+}
+.market-update-block.clr-block-6 {
+    background:#D7DF01;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
 }
 .market-update-block.clr-block-1:hover {
     background: #8b5c7e;
@@ -2331,8 +2348,8 @@ ul.inbox-pagination li {
     left: 6%;
     bottom: -100%;
     text-align: center;
-    width: 340px;
-    height: 200px;
+    width: 200px;
+    height: 120px;
     -webkit-transition: .5s all;
     transition: .5s all;
     -moz-transition: .5s all;
@@ -2543,8 +2560,8 @@ div#graph10,div#graph11 {
 }
 .captn {
     padding: 1em;
-    width: 301px;
-    height: 182px;
+    width: 170px;
+    height: 100px;
 }
 }
 @media (max-width: 1366px){
@@ -2552,8 +2569,8 @@ div#graph10,div#graph11 {
     width: 35%;
 }
 .captn {
-    width: 280px;
-    height: 170px;
+    width: 170px;
+    height: 100px;
 }
 }
 @media (max-width: 1280px){
@@ -2561,8 +2578,8 @@ div#graph10,div#graph11 {
     width: 38%;
 }
 .captn {
-    width: 256px;
-    height: 150px;
+    width: 170px;
+    height: 100px;
 }
 .market-update-block {
     padding: 1em 1em;
@@ -2737,8 +2754,8 @@ div#graph1, div#graph4, div#graph5, div#graph6, div#graph7, div#graph8, div#grap
     padding: 2em 2em;
 }
 .captn {
-    width: 534px;
-    height: 300px;
+    width: 170px;
+    height: 100px;
 }
 .captn h4 {
     margin: 6em 0 0 0;
@@ -2772,8 +2789,8 @@ div#graph1, div#graph4, div#graph5, div#graph6, div#graph7, div#graph8, div#grap
     width: 26%;
 }
 .captn {
-    width: 474px;
-    height: 267px;
+    width: 170px;
+    height: 100px;
 }
 .captn h4 {
     margin: 5em 0 0 0;
@@ -2790,8 +2807,8 @@ div#graph1, div#graph4, div#graph5, div#graph6, div#graph7, div#graph8, div#grap
     padding: 3.7em 2em;
 }
 .captn {
-    width: 452px;
-    height: 250px;
+    width: 170px;
+    height: 100px;
 }
 div#graph1, div#graph4, div#graph5, div#graph6, div#graph7, div#graph8, div#graph9,div#graph10,div#graph11 {
     width: 525px !important;
@@ -2802,8 +2819,8 @@ div#graph1, div#graph4, div#graph5, div#graph6, div#graph7, div#graph8, div#grap
     width: 80%;
 }
 .captn {
-    width: 414px;
-    height: 242px;
+    width: 170px;
+    height: 100px;
 }
 div#graph1, div#graph4, div#graph5, div#graph6, div#graph7, div#graph8, div#graph9,div#graph10,div#graph11 {
     width: 480px !important;
@@ -2814,8 +2831,8 @@ div#graph1, div#graph4, div#graph5, div#graph6, div#graph7, div#graph8, div#grap
     width: 84%;
 }
 .captn {
-    width: 386px;
-    height: 225px;
+    width: 170px;
+    height: 100px;
 }
 .captn h4 {
     margin: 4em 0 0 0;
@@ -2837,8 +2854,8 @@ div#graph1, div#graph4, div#graph5, div#graph6, div#graph7, div#graph8, div#grap
     width: 33%;
 }
 .captn {
-    width: 308px;
-    height: 180px;
+    width: 170px;
+    height: 100px;
 }
 .captn h4 {
     margin: 3em 0 0 0;
@@ -2889,8 +2906,8 @@ div#graph1, div#graph4, div#graph5, div#graph6, div#graph7, div#graph8, div#grap
     padding: 30px 20px;
 }
 .captn {
-    width: 250px;
-    height: 146px;
+    width: 170px;
+    height: 100px;
 }
 .captn h4 {
     margin: 2em 0 0 0;

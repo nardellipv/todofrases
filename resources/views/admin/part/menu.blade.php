@@ -1,5 +1,4 @@
 <div id="sidebar" class="nav-collapse">
-    <!-- sidebar menu start-->
     <div class="leftside-navigation">
         <ul class="sidebar-menu" id="nav-accordion">
             <li>
@@ -15,7 +14,9 @@
                     <span>Categorías</span>
                 </a>
                 <ul class="sub">
-                    <li><a href="{{ url('category') }}">Agregar</a></li>
+                    @if(Auth::user()->type == 'ADMIN')
+                        <li><a href="{{ url('category') }}">Agregar</a></li>
+                    @endif
                     <li><a href="{{ url('listcategory') }}">Listar</a></li>
                 </ul>
             </li>
@@ -29,7 +30,16 @@
                     <li><a href="{{ url('listphrases') }}">Listar</a></li>
                 </ul>
             </li>
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-camera-retro"></i>
+                    <span>Imágenes</span>
+                </a>
+                <ul class="sub">
+                    <li><a href="{{ url('photo/create ') }}">Agregar</a></li>
+                    <li><a href="{{ url('listPhoto') }}">Listar</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
-    <!-- sidebar menu end-->
 </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Visitors an Admin Panel Category Bootstrap Responsive Website Template | Login :: w3layouts</title>
+    <title>Login Administrador</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content=""/>
@@ -12,6 +12,7 @@
         function hideURLbar() {
             window.scrollTo(0, 1);
         } </script>
+    <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
     <!-- bootstrap-css -->
     <link rel="stylesheet" href="{{ asset('backStyle/css/bootstrap.min.css') }}">
     <!-- //bootstrap-css -->
@@ -49,22 +50,20 @@
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
             @endif
-            <span><input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}</span>
-            <h6><a href="#">Olvide mi password?</a></h6>
+            <span><input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Recordar') }}</span>
+            {{--<h6><a href="{{ url('password/reset') }}">Olvide mi password?</a></h6>--}}
             <div class="clearfix"></div>
             <input type="submit" value="Ingresar" name="login">
         </form>
-        <p>No tengo cuenta?<a href="#">Crear una cuenta</a></p>
+        <p>No tengo cuenta?<a href="{{ url('register') }}">Crear una cuenta</a></p>
     </div>
 </div>
-<script src="{{ asset('js/bootstrap.js') }}'"></script>
-<script src="{{ asset('js/jquery.dcjqaccordion.2.7.js') }}"></script>
-<script src="{{ asset('js/scripts.js') }}"></script>
-<script src="{{ asset('js/jquery.slimscroll.js') }}"></script>
-<script src="{{ asset('js/jquery.nicescroll.js') }}"></script>
-<!--[if lte IE 8]>-->
-<script language="javascript" type="text/javascript" src="{{ asset('js/flot-chart/excanvas.min.js') }}"></script>
+<script src="{{ asset('backStyle/js/bootstrap.js') }}"></script>
+<script src="{{ asset('backStyle/js/jquery.dcjqaccordion.2.7.js') }}"></script>
+<script src="{{ asset('backStyle/js/scripts.js') }}"></script>
+<script src="{{ asset('backStyle/js/jquery.slimscroll.js') }}"></script>
+<script src="{{ asset('backStyle/js/jquery.nicescroll.js') }}"></script>
 <!--[endif]-->
-<script src="{{ asset('js/jquery.scrollTo.js') }}"></script>
+<script src="{{ asset('backStyle/js/jquery.scrollTo.js') }}"></script>
 </body>
 </html>

@@ -3,6 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12">
+
             @if (Session::has('message'))
                 <p class="alert alert-danger">{!! Session::get('message') !!}</p>
             @endif
@@ -22,7 +23,7 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label">Argegar Autor</label>
                         <div class="col-sm-6">
-                            <input type="text" name="author" class="form-control" required>
+                            <input type="text" name="author" class="form-control" placeholder="autor" required>
                         </div>
                     </div>
                     <div class="form-group">

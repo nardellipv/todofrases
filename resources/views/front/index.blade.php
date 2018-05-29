@@ -1,95 +1,100 @@
 @extends('layouts.main_front')
 
 @section('content')
-    <h1>Frases para reflexionar</h1>
-    <h5>Lee, reflexiona, compartí y vota frases de la vida real, oraciones cortas, sabias y bonitas para compartir y
-        quedarse pensando. Estas oraciones van a llegarte al alma <br /><br />
-    Esperamos que éstas palabras y mensajes lleguen a tu corazón y te sirvan para cualquier momento de la vida. Queremos que
-    participes votando las frases que más te gusten y por supuesto compartas con tus seres queridos.</h5>
-    <div class="banner">
-        <div class="col-md-8 banner-left">
-            <h3>Última Frase</h3>
-            <p>{{ $lastPhrase->text }}</p>
-            <p><b>{{ $lastPhrase->author }}</b></p>
-        </div>
-        <div class="clearfix"></div>
+    <div class="col-md-12 cabecera" id="cabecera">
+        <h1>Frases para reflexionar y compartir</h1>
     </div>
-    <!-- banner -->
-    <!-- welcome -->
-    <div class="welcome">
-        @include('front.part.ads1')
-        <div class="welcome-top">
-            <div class="col-md-6 welcome-left">
-                <div class="view view-tenth">
-                    <a href="{{  url('categoria', $randPhrase1->category_id) }}">
-                        <div class="inner_content clearfix">
-                            <div class="product_image">
-                                <img src="{{ asset('frontStyle/images/img5.jpg') }}" class="img-responsive of-my"
-                                     alt="img5.jpg"/>
-                                <div class="mask">
-                                    <h4>Frase Aleatorea</h4>
-                                    <p>{{ $randPhrase1->text }}</p>
-                                    <p><b>{{ $randPhrase1->author }}</b></p>
-                                    <h5>Continuar leyendo...</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+    <div>
+        <div class="container headerContainer">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Registrate y compatí frases y fotos con lindas frases a tu amigos.</p>
+                    <p>Es totalmente <b>gratis</b> y nunca cobraremos nada, solo queremos compartir y hacer una
+                        comunidad
+                        que escriba frases, suba imágenes y vote las mejores frases para luego compartir con las
+                        personas
+                        amadas que todos tenemos.</p>
+                </div>
+                <div class="col-md-6">
+                    <p><b>Lee, reflexiona, compartí y vota frases</b> de la vida real, oraciones cortas, sabias y
+                        bonitas
+                        para compartir y quedarse pensando. Estas oraciones van a llegarte al alma</p>
+                    <p>Esperamos que éstas palabras y mensajes lleguen a tu corazón y te sirvan para cualquier momento
+                        de la vida. Queremos que participes votando las
+                        frases que más te gusten y por supuesto compartas con tus seres queridos.<br><br></p>
                 </div>
             </div>
-            <div class="col-md-6 welcome-right">
-                <div class="view view-tenth">
-                    <a href="{{  url('categoria', $randPhrase2->category_id) }}">
-                        <div class="inner_content clearfix">
-                            <div class="product_image">
-                                <img src="{{ asset('frontStyle/images/img4.jpg') }}" class="img-responsive of-my"
-                                     alt="img4.jpg"/>
-                                <div class="mask">
-                                    <h4>Más Frases</h4>
-                                    <p>{{ $randPhrase2->text }}</p>
-                                    <p><b>{{ $randPhrase2->author }}</b></p>
-                                    <h5>Continuar leyendo...</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="clearfix"></div>
         </div>
-        <!-- welcome-bottom -->
-
-        <div id="ranking" class="welcome-bottom">
-            <h2>Las frases que más votaron los usuarios</h2>
-            <ul>
-                @foreach($rankings as $ranking)
-                    <li>
-                        <h5>{!! $ranking->phrase->text !!}</h5>
-                        <b>{{ $ranking->phrase->author }}</b>
-                        <h6>{{ $ranking->vote }} votos</h6>
-                    </li>
-                    <br />
-                @endforeach
-            </ul>
-        </div>
-
-        <h2>Y aun muchas más frases</h2>
-        <div class="welcome-bottom">
-            <ul>
-                @foreach($lastPhrasesLists1 as $lastPhraselist1)
-                    <li>
-                        <h5>{!! $lastPhraselist1->text !!}</h5>
-                        <b>{{ $lastPhraselist1->author }}</b>
-                    </li>
-                    <br />
-                @endforeach
-            </ul>
-        </div>
-
-        <!-- welcome-bottom -->
     </div>
-    <!-- welcome -->
-    <div class="should">
-        @include('front.part.ads2')
+    <div data-bs-parallax-bg="true" class="randomImg">
+        <h2 class="text-center"><span class="text-muted">Frases aleatoreas</span></h2>
+        <ul class="text-center">
+            @foreach($lastPhrasesLists1 as $lastPhraselist1)
+                <li style="color:#294896;font-family:Acme, sans-serif;">
+                    <h5>{!! $lastPhraselist1->text !!}</h5>
+                    <b>{{ $lastPhraselist1->author }}</b>
+                </li>
+                <br/>
+            @endforeach
+        </ul>
+    </div>
+    <div class="container" id="ranking">
+        <div class="row">
+            <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="text-center" id="ranking"><br><span class="text-muted">Las frases que más votaron los usuarios</span><br><br>
+                </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
+                <ul>
+                    @foreach($rankings as $ranking)
+                        <li>
+                            <h5 style="color:#3b8e31;font-family:Acme, sans-serif;">{!! $ranking->phrase->text !!}</h5>
+                            <b>{{ $ranking->phrase->author }}</b>
+                            <h6 class="text text-muted">
+                                <small><i>{{ $ranking->vote }} votos</i></small>
+                            </h6>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="photo-gallery" id="gallery">
+        <div class="container galleryImg" data-aos="fade-up" data-aos-delay="150">
+            <div class="intro">
+                <h2 class="text-center text-muted">Galería de Imágenes</h2>
+                <p class="text-center">Reflexiona con estas imágenes y comparte con tus seres amados.</p>
+            </div>
+            <div class="row photos">
+                @foreach($photos as $photo)
+                    <div class="col-sm-6 col-md-4 col-lg-3 item">
+                        <a href="../storage/app/{{ $photo->image }}" data-lightbox="photos">
+                            <img class="img-fluid" src="../storage/app/{{ $photo->image }}">
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+
+    <div data-aos="fade-up" data-aos-delay="150" class="footer-basic">
+        <div class="row">
+            <div class="col header-images-columns">
+                <div class="centered"></div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="gallery-pt"></div>
+        </div>
+
+        <div class="text-center">
+            @include('front.external.adsIndex')
+        </div>
+<br />
+        <footer>
+            @include('front.part.footer')
+        </footer>
     </div>
 @endsection
