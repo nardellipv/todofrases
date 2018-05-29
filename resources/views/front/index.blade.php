@@ -71,7 +71,7 @@
                 @foreach($photos as $photo)
                     <div class="col-sm-6 col-md-4 col-lg-3 item">
                         <a href="../storage/app/{{ $photo->image }}" data-lightbox="photos">
-                            <img class="img-fluid" src="../storage/app/{{ $photo->image }}">
+                            <img class="img-fluid img-thumbnail h-100 w-100" src="../storage/app/{{ $photo->image }}">
                         </a>
                     </div>
                 @endforeach
