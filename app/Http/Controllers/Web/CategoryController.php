@@ -17,7 +17,7 @@ class CategoryController extends Controller
 
         $phrases = Phrase::where('category_id', $categoryFind->id)
             ->orderBy('id','DESC')
-            ->get();
+            ->paginate(10);
 
         return view('front.category', compact('categoryFind', 'categories', 'phrases'));
     }

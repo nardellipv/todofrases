@@ -27,10 +27,10 @@
         </div>
     </div>
     <div data-bs-parallax-bg="true" class="randomImg">
-        <h2 class="text-center"><span class="text-muted">Frases aleatoreas</span></h2>
+        <h2 class="text-center"><span style="color:#fff">Frases aleatoreas</span></h2>
         <ul class="text-center">
             @foreach($lastPhrasesLists1 as $lastPhraselist1)
-                <li style="color:#294896;font-family:Acme, sans-serif;">
+                <li style="color:#fff;font-family:Acme, sans-serif;">
                     <h5>{!! $lastPhraselist1->text !!}</h5>
                     <b>{{ $lastPhraselist1->author }}</b>
                 </li>

@@ -37,6 +37,7 @@
     <script src="{{ asset('backStyle/js/morris.js') }}"></script>
 
     @include('front.external.analytics')
+    @include('front.external.pixelFace')
 
 </head>
 <body>

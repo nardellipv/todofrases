@@ -32,8 +32,8 @@ class HomeController extends Controller
             ->first();
 
         //listado de frases izquierda
-        $lastPhrasesLists1 = Phrase::where('status','APPROVED')
-        ->inRandomOrder()
+        $lastPhrasesLists1 = Phrase::where('status', 'APPROVED')
+            ->inRandomOrder()
             ->take(4)
             ->get();
 
@@ -43,7 +43,7 @@ class HomeController extends Controller
             ->get();
 
         $photos = Photo::where('status', 'APPROVED')
-            ->orderBy('id','DESC')
+            ->orderBy('id', 'DESC')
             ->get();
 
         return view('front.index', compact('categories', 'lastPhrase', 'randPhrase1', 'randPhrase2',

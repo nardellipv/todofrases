@@ -27,10 +27,6 @@
             enable_page_level_ads: true
         });
     </script>
-
-    @include('front.external.hotjar')
-
-    @include('front.external.adsInfolinks')
 </head>
 
 <body>

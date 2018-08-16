@@ -13,6 +13,7 @@
                     <p class="text-muted text-justify" style="font-family:Acme, sans-serif;">{!! $phrase->text !!} <b>{{ $phrase->author }}</b>
                         <a href="{{ url('like', $phrase->id) }}"><img src="{{ asset('frontStyle/img/like.png') }}"></a>
                     @endforeach
+                        {!! $phrases->render() !!}
                 </div>
                 <div class="col-md-6 col-lg-3 ads">
                     @include('front.external.adsCategory')
@@ -20,6 +21,5 @@
             </div>
         </div>
     </div>
-
-    <script data-cfasync='false' type='text/javascript' src='//p285918.clksite.com/adServe/banners?tid=285918_554159_3'></script>
+    @include('front.external.adsInfolinks')
 @endsection

@@ -87,6 +87,4 @@
             </footer>
         </div>
     </div>
-
-    <script data-cfasync='false' type='text/javascript' src='//p285918.clksite.com/adServe/banners?tid=285918_554159_0'></script>
 @endsection
